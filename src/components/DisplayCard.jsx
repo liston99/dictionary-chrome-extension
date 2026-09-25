@@ -4,6 +4,7 @@ const DisplayCard = ({word, definition})=>{
             <p className="text-xl underline underline-offset-8 mb-2">{word}</p>
             <p>Defintion:</p>
             <p>{definition}</p>
+            <a href={`https://en.wiktionary.org/wiki/${word}#Adjective`} className="text-xs underline underline-offset-1" target="_blank" rel="noopener noreferrer">Source</a>
          </div>
     )
 }

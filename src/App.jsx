@@ -16,7 +16,6 @@ function App() {
       );
       const data = await response.json();
       setData(data);
-      console.log(data);
       setLoading(false);
     };
 
@@ -26,7 +25,7 @@ function App() {
   return (
     <>
       <SearchCard setWord={setWord} setBtnClick={setBtnClick} />
-      {loading && <p className="m-0 p-2 bg-zinc-900 text-white text-center">Loading...</p>}
+      {loading && <p className="m-0 p-2 bg-zinc-900 text-white text-center w-100">Loading...</p>}
       {btnClick && !loading && (
         <DisplayCard
           word={data?.word}
