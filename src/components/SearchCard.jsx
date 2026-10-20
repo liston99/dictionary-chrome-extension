@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const SearchCard = ({setWord, setBtnClick}) => {
+const SearchCard = ({ setWord, setBtnClick }) => {
+  const [input, setInput] = useState("");
 
-    const [input, setInput] = useState('');
+  //store in localstorage
+  let itemNumber = 0;
+  const [wordHistory, setWordHistory] = useState(JSON.parse(localStorage.getItem("WordHistory")) || []);
 
-  const sendInputData = ()=>{
-    if(!input === true) return;
+  const sendInputData = () => {
+    if (!input === true) return;
     setBtnClick(true);
     setWord(input);
-    setInput('');
-  }
+    setInput("");
+    setWordHistory([...wordHistory, input])
+  };
+
+  useEffect(()=>{
+    localStorage.setItem("WordHistory", JSON.stringify(wordHistory))
+  }, [input])
   return (
     <>
       <div className="w-100 h-17 bg-zinc-900 text-white">
