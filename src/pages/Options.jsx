@@ -2,6 +2,10 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 function Options() {
+
+  const handleReset = ()=>{
+    localStorage.setItem("WordHistory", JSON.stringify([]));
+  }
   return (
     <>
       <div className="flex justify-center items-center h-screen text-white">
@@ -12,7 +16,7 @@ function Options() {
             <Link to="/WordHistory">
             <Button>Show History</Button>
             </Link>
-            <Button>Reset History</Button>
+            <Button onClick={handleReset}>Reset History</Button>
           </div>
         </div>  
       </div>

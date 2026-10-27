@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function WordHistory() {
   const [wordItem, setWordItem] = useState(JSON.parse(localStorage.getItem("WordHistory")));
+  const isEmpty = wordItem.length === 0;
   return (
     <>
       <div className="flex justify-center items-center h-screen text-white">
         <div className="p-3 w-101 rounded-lg bg-zinc-900">
-          <div className="cursor-pointer">Back</div>
+          <div className="cursor-pointer">
+            <Link to="/options">Back</Link>
+          </div>
           <div className="mb-2">
             <h1 className="text-center text-lg font-medium">Word History</h1>
           </div>
           <div className="bg-zinc-800 p-5 rounded overflow-y-auto h-70">
+            {isEmpty && <p>List is empty!</p>}
             <ul>
               {
               wordItem.map((item, index) => {
