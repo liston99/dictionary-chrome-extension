@@ -31,6 +31,9 @@ const SearchCard = ({ setWord, setBtnClick }) => {
             value={input}
             placeholder="Enter a word..."
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(event)=>{
+              if(event.key === 'Enter') sendInputData();
+            }}
           />
           <button
             className="bg-sky-600 px-3 py-0.5 rounded cursor-pointer"
