@@ -53,7 +53,7 @@ function WordHistory() {
               })}
             </ul>
           </div>
-          <Button onClick={()=>!isEmpty ? downloadHistoryAsTxt : alert("Enter new words to download the history!")}>Download History As Text</Button>
+          <Button onClick={()=>!isEmpty ? downloadHistoryAsTxt() : alert("Enter new words to download the history!")}>Download History As Text</Button>
         </div>
       </div>
     </>
