@@ -12,6 +12,7 @@ const SearchCard = ({ setWord, setBtnClick }) => {
     setBtnClick(true);
     setWord(input);
     setInput("");
+   if(wordHistory.includes(input)) return;
     setWordHistory([...wordHistory, input])
   };
 
