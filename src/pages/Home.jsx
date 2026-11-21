@@ -8,8 +8,11 @@ function Home() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
+
   useEffect(() => {
     const fetchdata = async () => {
+      if(!word) return;
       setLoading(true);
       const response = await fetch(
         `https://freedictionaryapi.com/api/v1/entries/en/${word}`,
@@ -21,6 +24,7 @@ function Home() {
 
     fetchdata();
   }, [word]);
+
   return (
     <>
       <SearchCard setWord={setWord} setBtnClick={setBtnClick} />
