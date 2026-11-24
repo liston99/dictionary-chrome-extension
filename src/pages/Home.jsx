@@ -7,15 +7,13 @@ function Home() {
   const [btnClick, setBtnClick] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-
-
-
+  
   useEffect(() => {
     const fetchdata = async () => {
       if(!word) return;
       setLoading(true);
       const response = await fetch(
-        `https://freedictionaryapi.com/api/v1/entries/en/${word}`,
+        `https://freedictionaryapi.com/api/v1/entries/en/${word}`
       );
       const data = await response.json();
       setData(data);
