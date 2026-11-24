@@ -20,7 +20,7 @@ git clone <your-repository-url>
  
 ### 2. Navigate to the project directory
 ```
-cd my-dictionary
+cd <your-project-directory>
 ```
 ### 3. Install dependencies
 ```
